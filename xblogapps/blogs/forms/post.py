@@ -10,6 +10,7 @@ class BasePostForm:
 
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request')
+        self.article = kwargs.pop('article')
         super().__init__(*args, **kwargs)
         self.fields['content'].widget.attrs.update({
             'cols': '58',
@@ -27,6 +28,7 @@ class PostForm(BasePostForm, forms.ModelForm):
     def save(self, commit=True):
         post = super().save(commit=False)
         post.user = self.request.user
+        post.article = self.article
         if commit:
             post.save()
         return post
@@ -52,7 +54,7 @@ class AnonymousUserPostForm(BasePostForm, forms.Form):
     first_name = forms.CharField(max_length=20)
     last_name = forms.CharField(max_length=20)
     website = forms.URLField(required=False)
-    content = forms.CharField()
+    content = forms.CharField(widget=forms.Textarea)
 
     def save(self, *args, **kwargs):
         email = self.cleaned_data['email']
@@ -60,12 +62,13 @@ class AnonymousUserPostForm(BasePostForm, forms.Form):
         user = User(
             username=username,
             email=email,
-            first_name=self.cleaned_data['first_name'],
-            last_name=self.cleaned_data['last_name']
+            firstname=self.cleaned_data['first_name'],
+            lastname=self.cleaned_data['last_name']
         )
         user.set_unusable_password()
         user.save()
         post = Post.objects.create(
+            article=self.article,
             content=self.cleaned_data['content'],
             user=user
         )

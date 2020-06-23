@@ -1,6 +1,21 @@
-<div class="row mb-3">
-    <div class="col-lg-12">
-        <a href="#" class="btn btn-outline-secondary float-left">&larr; Older</a>
-        <a href="#" class="btn btn-outline-dark float-right">Newer &rarr;</a>
+{% if is_paginated %}
+
+    <div class="row mb-3">
+        <div class="col-lg-12">
+            {% if page.has_previous_page_number %}
+                <a href="?page={{ page.previous_page_number }}" class="btn btn-outline-secondary float-left">&larr;
+                    Older</a>
+                {% else %}
+                <a disabled="true" class="btn btn-outline-secondary float-left">&larr;
+                    First</a>
+            {% endif %}
+            {% if page.next_page_number %}
+                <a href="{{ page.next_page_number }}" class="btn btn-outline-dark float-right">Newer &rarr;</a>
+                {% else %}
+                <a disabled="true" class="btn btn-outline-secondary float-left">&larr;
+                    Last</a>
+            {% endif %}
+        </div>
     </div>
-</div>
+
+{% endif %}

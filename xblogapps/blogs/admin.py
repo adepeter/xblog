@@ -16,7 +16,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = [
         'title',
         'id',
-        'user',
+        'author',
         'slug',
         'category',
         'content',
@@ -26,8 +26,8 @@ class ArticleAdmin(admin.ModelAdmin):
         'modified',
         'is_locked'
     ]
-    search_fields = ['title', 'user', 'slug', 'content']
-    list_filter = ['is_hidden', 'user', 'category', 'is_locked']
+    search_fields = ['title', 'author', 'slug', 'content']
+    list_filter = ['is_hidden', 'author', 'category', 'is_locked']
     prepopulated_fields = {
         'slug': ('title',),
     }

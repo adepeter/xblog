@@ -7,10 +7,10 @@
 {% block title_jumbotron %}
     <section id="page-title">
         <div class="container clearfix">
-            <h1>Blog</h1>
-            <span>Our Latest News</span>
+            <h1>SLEEKXBLOG</h1>
+            <span>Welcome on board</span>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'xblog:home' %}">Home</a></li>
             </ol>
         </div>
     </section>
@@ -26,37 +26,39 @@
         ============================================= -->
         <div id="posts">
 
-            <div class="entry clearfix">
-                <div class="entry-image">
-                    <a href="{% static 'images/blog/full/17.jpg' %}" data-lightbox="image"><img class="image_fade"
-                                                                                                src="{% static 'images/blog/standard/17.jpg' %}"
-                                                                                                alt="Standard Post with Image"></a>
+            {% for article in page_obj %}
+                <div class="entry clearfix">
+                    <div class="entry-image">
+                            {% if article.image %}
+                                <img src="{{ article.image.url }}"/>
+                            {% else %}
+                                <img class="image_fade" src="{% static 'images/no_thumbnail.png' %}" alt="{{ article.title }}">
+                            {% endif %}
+                    </div>
+                    <div class="entry-title">
+                        <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+                    </div>
+                    <ul class="entry-meta clearfix">
+                        <li><i class="icon-calendar3"></i> {{ article.created }}</li>
+                        <li><a href="#"><i class="icon-user"></i> {{ article.author.get_display_name }}</a></li>
+                        <li><i class="icon-folder-open"></i><a href="#">{{ article.category.name }}</a></li>
+                        <li><i class="icon-comments"></i> {{ article.posts | length }}</li>
+                        <li><a href="#"><i class="icon-camera-retro"></i></a></li>
+                    </ul>
+                    <div class="entry-content">
+                        <p>{{ article.content | truncatewords:20 }}</p>.</p>
+                        <a href="{{ article.get_absolute_url }}" class="more-link">Read More</a>
+                    </div>
                 </div>
-                <div class="entry-title">
-                    <h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
-                </div>
-                <ul class="entry-meta clearfix">
-                    <li><i class="icon-calendar3"></i> 10th Feb 2014</li>
-                    <li><a href="#"><i class="icon-user"></i> admin</a></li>
-                    <li><i class="icon-folder-open"></i> <a href="#">General</a>, <a href="#">Media</a></li>
-                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
-                    <li><a href="#"><i class="icon-camera-retro"></i></a></li>
-                </ul>
-                <div class="entry-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod
-                        est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id
-                        aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti
-                        quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab
-                        facere.</p>
-                    <a href="blog-single.html" class="more-link">Read More</a>
-                </div>
-            </div>
+            {% empty %}
+                <h3>No Blog at all created</h3>
+            {% endfor %}
 
         </div><!-- #posts end -->
 
         <!-- Pagination
         ============================================= -->
-        {% include "xblogapps/_partials/pagination/two_way_pagination.html" %}
+        {% include "xblogapps/_partials/pagination/two_way_pagination.html" with page=page_obj %}
         <!-- .pager end -->
 
     </div><!-- .postcontent end -->

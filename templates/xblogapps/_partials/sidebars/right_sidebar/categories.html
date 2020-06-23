@@ -7,7 +7,7 @@
         {% list_categories as categories %}
         {% for category in categories %}
             <li class="list-group-item">
-                <a href="">{{ category.name }}</a>
+                <a href="{% url 'xblog:blogs:article_list' category.slug %}">{{ category.name }}</a>
                 <span class="badge badge-secondary float-right"
                       style="margin-top: 3px;">{{ category.articles.count }}</span>
             </li>

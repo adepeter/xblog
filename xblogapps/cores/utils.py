@@ -7,7 +7,7 @@ MEDIA_ROOT = settings.MEDIA_ROOT
 
 
 class ImageHandler:
-    def upload_handler(instance, filename):
+    def upload_handler(self, instance, filename):
         random_int = timezone.now() - instance.created
         filename = str(random_int.microseconds) + '_' + filename
         instance_content_type = ContentType.objects.get_for_model(instance)

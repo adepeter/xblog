@@ -14,6 +14,8 @@ import os
 
 import dj_database_url
 
+from django.urls import reverse_lazy
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -167,3 +169,8 @@ GRAPHQL_JWT = {
 
 # prod_db = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(prod_db)
+
+LOGIN_URL = reverse_lazy('xblog:users:login')
+LOGOUT_URL = reverse_lazy('xblog:users:logout')
+LOGIN_REDIRECT_URL = reverse_lazy('xblog:home')
+LOGOUT_REDIRECT_URL = reverse_lazy('xblog:home')

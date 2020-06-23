@@ -8,11 +8,13 @@ from django.utils.translation import gettext_lazy as _
 
 from ...cores.utils import ImageHandler
 
+from ..managers.article import ArticleManager
+
 image_hander = ImageHandler()
 
 
 class Article(models.Model):
-    user = models.ForeignKey(
+    author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         verbose_name=_('user'),
         on_delete=models.DO_NOTHING,
@@ -43,6 +45,8 @@ class Article(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
+    objects = ArticleManager()
+
     def get_article_image(self):
         image = image_hander.stringify_image_url(self.image)
         return image
@@ -61,4 +65,4 @@ class Article(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'{self.user.username} just created a {self.title}'
+        return f'{self.author.username} just created a {self.title}'
