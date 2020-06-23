@@ -1,0 +1,15 @@
+type Post {
+    article: Article!,
+    user: User!,
+
+    id: ID!,
+    content: String!,
+    is_hidden: Boolean!,
+    created: DateTime!,
+    modified: DateTime!
+}
+
+
+input PostCreateInput {
+
+}

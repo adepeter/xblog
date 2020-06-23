@@ -1,0 +1,59 @@
+type User {
+    id: ID!,
+    email: String!,
+    username: String!,
+    slug: String,
+    password: String!,
+    is_active: Boolean,
+    is_staff: Boolean,
+    is_superuser: Boolean,
+    dob: Date,
+    age: Int,
+    created: DateTime!,
+    modified: DateTime!,
+    last_login: DateTime!,
+}
+
+input UserCreateInput {
+    id: ID!,
+    email: String!,
+    username: String!,
+    slug: String
+}
+
+input UserEditInput {
+    first_name: String,
+    last_name: String,
+    dob: DateTime,
+}
+
+input UserDeleteInput {
+    id: ID!,
+    slug: String!,
+    password: String!
+}
+
+type Query {
+    getallUsers() users: [User],
+    getUserByIdAndSlug(id: ID!, slug: String!) user (id, slug): User!,
+    searchUserByInputs(params: String): [User]
+    getCurrentUser() user: User!
+}
+
+type UserCreatePayload {
+    user: User
+}
+
+type UserDeletePayload {
+    user: [User]
+}
+
+type UserEditPayload {
+    user: User
+}
+
+type Mutation {
+    userCreate(input: UserCreateInput: CreateUserPayload,
+    userDelete(input: UserDeleteInput: CreateDeletePayload,
+    userEdit(input: UserEditInput: CreateEditPayload,
+}

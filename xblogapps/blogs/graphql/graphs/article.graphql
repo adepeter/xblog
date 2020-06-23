@@ -1,0 +1,73 @@
+schema {
+    query: Query,
+    mutation: Mutation
+}
+
+type Article {
+    id: ID!,
+    title: String!,
+    slug: String!,
+    content: String!,
+
+    user: User!,
+    category: Category!,
+
+    posts: [Post]
+}
+
+type Query {
+    allArticlesByCategoryIdAndSlug (categoryId: ID!, categorySlug: String!) articles (id, slug): [Thread],
+    singleArticleByCategorySlug (categorySlug: Slug!, articleID: ID!, articleSlug: String!)  article (cat_slug, id, slug): Thread!,
+
+}
+
+input ArticleBaseInput {
+    id: ID!,
+    title: String!,
+    content: String!,
+
+    category: Category!,
+    user: User!,
+}
+
+input ArticlePatchInput {
+    id: ID!,
+    slug: String!,
+
+    category: Category!
+}
+
+input ArticleInput implements ArticleBaseInput {
+    // Do nothing
+}
+
+input ArticleCreateInput implements ArticleBaseInput {
+    id: ID!,
+}
+
+input ArticleEditInput implements ArticlePatchInput {
+    patch: ArticleInput!
+}
+
+input ArticleDeleteInput implements ArticlePatchInput {
+    // Do nothing
+}
+
+
+type ArticleCreatePayload {
+    ArticleCreateInput: Article!
+}
+
+type ArticleEditPayload {
+    ArticleEditInput: Article!
+}
+
+type ArticleCreatePayload {
+    ArticleDeleteInput: [Article]
+}
+
+query Mutation {
+    articleCreate (User, Category, title, content): ArticleCreatePayload!,
+    articleEdit (Category, id, slug): ArticleEditPayload!,
+    articleDelete (Category, id, slug): ArticleDeletePayload!
+}
