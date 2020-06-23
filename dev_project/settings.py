@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '*',
     '127.0.0.1',
-    'xblog.herokuapp.com'
+    'sleekxblog.herokuapp.com'
 ]
 
 # Application definition
