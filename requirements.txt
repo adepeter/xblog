@@ -1,0 +1,11 @@
+django
+django-mptt
+pillow
+gunicorn
+dj-database-url
+whitenoise
+psycopg2
+django-heroku
+requests
+graphene-django
+django-graphql-jwt

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}XBLOG Home{% endblock %}
+
+{% block title_jumbotron %}
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>SLEEKXBLOG</h1>
+            <span>Welcome on board</span>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'xblog:home' %}">Home</a></li>
+            </ol>
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+    {% include 'xblogapps/_partials/sidebars/left_sidebar/_base_left.html' %}
+    <!-- Post Content
+    ============================================= -->
+    <div class="postcontent bothsidebar nobottommargin clearfix">
+        <!-- Posts
+                        ============================================= -->
+        <div id="posts" class="post-grid grid-container grid-2 clearfix" data-layout="fitRows">
+            {% for article in page_obj %}
+
+                <div class="entry clearfix">
+                    <div class="entry-image">
+                        {% if article.image %}
+                            <img src="{{ article.image.url }}"/>
+                        {% else %}
+                            <img class="image_fade" src="{% static 'images/no_thumbnail.png' %}"
+                                 alt="{{ article.title }}">
+                        {% endif %}
+                    </div>
+                    <div class="entry-title">
+                        <h2><a href="{{ article.get_absolute_url }}">{{ article.title | truncatewords:3 }}</a></h2>
+                    </div>
+                    <ul class="entry-meta clearfix">
+                        <li><i class="icon-calendar3"></i> {{ article.published }}</li>
+                        <li><i class="icon-comments"></i> {{ article.posts.all | length }}</li>
+                    </ul>
+                    <div class="entry-content">
+                        <p>{{ article.content | truncatewords:5 }}</p>
+                        <a href="{{ article.get_absolute_url }}" class="more-link">Read More</a>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No article yet</p>
+            {% endfor %}
+
+        </div><!-- #posts end -->
+
+            <!-- Pagination
+            ============================================= -->
+            {% include "xblogapps/_partials/pagination/two_way_pagination.html" with page=page_obj %}
+            <!-- .pager end -->
+    </div><!-- .postcontent end -->
+
+
+    {% include 'xblogapps/_partials/sidebars/right_sidebar/_base_right.html' %}
+
+{% endblock %}

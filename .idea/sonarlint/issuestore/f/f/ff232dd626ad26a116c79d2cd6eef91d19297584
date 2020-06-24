@@ -1,0 +1,78 @@
+
+Gjavascript:S1117U"+'$' is already declared in the upper scope.(éÈ„±
+Gjavascript:S2814€"%'transformXvalue' is already defined.(úºãˆÿÿÿÿÿ
+Tjavascript:S1481Ü"2Remove the declaration of the unused 't' variable.(µ´ıÿÿÿÿ
+Qjavascript:S1854Ü"/Remove this useless assignment to variable "t".(µ´ıÿÿÿÿ
+Pjavascript:S1481ü"3Remove the declaration of the unused 'to' variable.(•ÙÀÚ
+Mjavascript:S1854ü"0Remove this useless assignment to variable "to".(•ÙÀÚ
+ajavascript:S1854Ú"?Remove this useless assignment to variable "loaderBorderClass".(¯ûÈóûÿÿÿÿ
+Ajavascript:S2814ƒ"$'deviceSmallest' is already defined.(€¹àç
+Cjavascript:S2814…"!'elementSize' is already defined.(­îûıÿÿÿÿ
+:javascript:S2814‰"'columns' is already defined.(‹Ğ
+Ajavascript:S2814Š"$'containerWidth' is already defined.(Á—ò
+<javascript:S2814‘"'postWidth' is already defined.(°Í‹Ó
+Tjavascript:S1481ª"2Remove the declaration of the unused 't' variable.(µ´ıÿÿÿÿ
+Qjavascript:S1854ª"/Remove this useless assignment to variable "t".(µ´ıÿÿÿÿ
+[javascript:S1481·"9Remove the declaration of the unused 'elementW' variable.(Šªøşÿÿÿÿ
+Xjavascript:S1854·"6Remove this useless assignment to variable "elementW".(Šªøşÿÿÿÿ
+Vjavascript:S1481¸"9Remove the declaration of the unused 'elementH' variable.(£Õ‡è
+Sjavascript:S1854¸"6Remove this useless assignment to variable "elementH".(£Õ‡è
+Wjavascript:S1481¹":Remove the declaration of the unused 'elementPW' variable.(½Û¢ˆ
+Tjavascript:S1854¹"7Remove this useless assignment to variable "elementPW".(½Û¢ˆ
+Ajavascript:S2814»	"$'onePageOffsetG' is already defined.(Ç¢©Ñ
+Gjavascript:S2814‹
+"%'newClassesArray' is already defined.(ì¯ìÅûÿÿÿÿ
+Gjavascript:S2814¢
+"%'newClassesArray' is already defined.(¾°Í‚ûÿÿÿÿ
+Ijavascript:S2814Ú"''elementPagination' is already defined.(®½îÃùÿÿÿÿ
+Mjavascript:S2814Û"0'elementPaginationClickable' is already defined.(ê­½°
+Fjavascript:S2814‡"$'tranformAmount' is already defined.(©…ğ›øÿÿÿÿ
+Bjavascript:S2814ˆ"%'tranformAmount2' is already defined.(•àìŞ
+djavascript:S1481©"BRemove the declaration of the unused 'parallaxOffsetTop' variable.(‡‘¡üÿÿÿÿ
+ajavascript:S1854©"?Remove this useless assignment to variable "parallaxOffsetTop".(‡‘¡üÿÿÿÿ
+Ejavascript:S2814¬"#'tHeaderOffset' is already defined.(òı‡Üÿÿÿÿÿ
+Gjavascript:S2814Ù"%'oldClassesArray' is already defined.(­²†Âşÿÿÿÿ
+Rjavascript:S2814ú"0'portfolioOverlayIconHeight' is already defined.(ËüÄÌşÿÿÿÿ
+Zjavascript:S1117"8'prevPostPortId' is already declared in the upper scope.(Åó—ùÿÿÿÿ
+[javascript:S1117À"9'topOffsetScroll' is already declared in the upper scope.(ñºÂÀüÿÿÿÿ
+Tjavascript:S1481Å"2Remove the declaration of the unused 't' variable.(µ´ıÿÿÿÿ
+Mjavascript:S1117Å"+'t' is already declared in the upper scope.(µ´ıÿÿÿÿ
+Qjavascript:S1854Å"/Remove this useless assignment to variable "t".(µ´ıÿÿÿÿ
+Tjavascript:S1481Õ"2Remove the declaration of the unused 't' variable.(µ´ıÿÿÿÿ
+Qjavascript:S1854Õ"/Remove this useless assignment to variable "t".(µ´ıÿÿÿÿ
+Vjavascript:S1117÷"4'portPostId' is already declared in the upper scope.(Şïªµüÿÿÿÿ
+Djavascript:S1656‘""'flexsPagi' is assigned to itself.(³²øıÿÿÿÿ
+Ojavascript:S1481ª"2Remove the declaration of the unused 't' variable.(ÆšœÃ
+Ljavascript:S1854ª"/Remove this useless assignment to variable "t".(ÆšœÃ
+Tjavascript:S1481¤"2Remove the declaration of the unused 't' variable.(ì”Ôøÿÿÿÿ
+Qjavascript:S1854¤"/Remove this useless assignment to variable "t".(ì”Ôøÿÿÿÿ
+Ojavascript:S1481÷"2Remove the declaration of the unused 't' variable.(ÌüœÙ
+Ljavascript:S1854÷"/Remove this useless assignment to variable "t".(ÌüœÙ
+djavascript:S1481¶"BRemove the declaration of the unused 'instaGramLocation' variable.(ë°¼ úÿÿÿÿ
+ajavascript:S1854¶"?Remove this useless assignment to variable "instaGramLocation".(ë°¼ úÿÿÿÿ
+<javascript:S2814Ï"'feed' is already defined.(Ö–´„úÿÿÿÿ
+<javascript:S2814Û"'feed' is already defined.(Ö–´„úÿÿÿÿ
+<javascript:S2814ç"'feed' is already defined.(Ö–´„úÿÿÿÿ
+Tjavascript:S1481œ"8Remove the declaration of the unused 'element' variable.(–ŞÁ>
+Qjavascript:S1854œ"5Remove this useless assignment to variable "element".(–ŞÁ>
+]javascript:S1481§";Remove the declaration of the unused 'pluginData' variable.(Ï§©àıÿÿÿÿ
+Zjavascript:S1854§"8Remove this useless assignment to variable "pluginData".(Ï§©àıÿÿÿÿ
+Tjavascript:S1481Å"2Remove the declaration of the unused 't' variable.(ô’Ã›şÿÿÿÿ
+Qjavascript:S1854Å"/Remove this useless assignment to variable "t".(ô’Ã›şÿÿÿÿ
+9javascript:S2814È"'t' is already defined.(¼£Ú«üÿÿÿÿ
+Tjavascript:S1481È"2Remove the declaration of the unused 't' variable.(¼£Ú«üÿÿÿÿ
+Qjavascript:S1854È"/Remove this useless assignment to variable "t".(¼£Ú«üÿÿÿÿ
+Ajavascript:S2814œ"'alertType' is already defined.(äƒÅ´úÿÿÿÿ
+Ajavascript:S2814"'alertType' is already defined.(äƒÅ´úÿÿÿÿ
+Tjavascript:S1481Æ"2Remove the declaration of the unused 't' variable.(µ´ıÿÿÿÿ
+Qjavascript:S1854Æ"/Remove this useless assignment to variable "t".(µ´ıÿÿÿÿ
+^javascript:S1481â"ARemove the declaration of the unused 'defaultLogoWidth' variable.(Ë¯¦ë
+[javascript:S1854â">Remove this useless assignment to variable "defaultLogoWidth".(Ë¯¦ë
+Xjavascript:S1481ğ"6Remove the declaration of the unused '$shop' variable.(Ò¨ŒÅşÿÿÿÿ
+Ujavascript:S1854ğ"3Remove this useless assignment to variable "$shop".(Ò¨ŒÅşÿÿÿÿ
+javascript:S4165Ğ"kReview this useless assignment: "timeOutActive" already holds the assigned value along all execution paths.(Ş©é‡úÿÿÿÿ
+javascript:S4165
+"_Review this useless assignment: "i" already holds the assigned value along all execution paths.(®ù”¤úÿÿÿÿ
+javascript:S4165§
+"_Review this useless assignment: "i" already holds the assigned value along all execution paths.(®ù”¤úÿÿÿÿ
+|javascript:S4165Ş"_Review this useless assignment: "i" already holds the assigned value along all execution paths.(Ã½µö

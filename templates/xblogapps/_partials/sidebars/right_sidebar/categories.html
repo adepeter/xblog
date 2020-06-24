@@ -1,0 +1,19 @@
+{% load category_tags %}
+
+<div class="widget widget_links clearfix">
+
+    <h4>Categories</h4>
+    <ul>
+        {% list_categories as categories %}
+        {% for category in categories %}
+            <li class="list-group-item">
+                <a href="{% url 'xblog:blogs:article_list' category.slug %}">{{ category.name }}</a>
+                <span class="badge badge-secondary float-right"
+                      style="margin-top: 3px;">{{ category.articles.count }}</span>
+            </li>
+        {% empty %}
+            <p>No categories yet</p>
+        {% endfor %}
+    </ul>
+
+</div>

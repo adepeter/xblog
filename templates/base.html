@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <!-- Stylesheets
+    ============================================= -->
+    {% include 'loader/header/metatags.html' %}
+    <!-- Stylesheets
+    ============================================= -->
+    {% include 'loader/header/stylesheets.html' %}
+    <!-- Document Title
+    ============================================= -->
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+
+<body class="stretched">
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <!-- Header
+    ============================================= -->
+    <header id="header" class="full-header">
+        {% include 'loader/header/top.html' %}
+    </header><!-- #header end -->
+
+    <!-- Page Title
+    ============================================= -->
+    {% block title_jumbotron %}
+    {% endblock %}
+    <!-- #page-title end -->
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap">
+
+            <div class="container clearfix">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+
+        </div>
+
+    </section><!-- #content end -->
+
+    <!-- Footer
+    ============================================= -->
+    <footer id="footer" class="dark">
+        {% include 'loader/footer/base.html' %}
+    </footer><!-- #footer end -->
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts
+============================================= -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script src="{% static 'js/functions.js' %}"></script>
+
+</body>
+</html>

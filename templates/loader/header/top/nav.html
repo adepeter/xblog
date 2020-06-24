@@ -1,0 +1,20 @@
+<ul>
+    <li><a href="{% url 'xblog:home' %}">
+        <div>Home</div>
+    </a>
+    </li>
+    <li><a href="#">
+        <div>Categories</div>
+    </a>
+    </li>
+    {% if not request.user.is_authenticated %}
+        <li><a href="{% url 'xblog:users:login' %}">
+            <div>Login</div>
+        </a>
+        </li>
+        <li><a href="{% url 'xblog:users:register' %}">
+            <div>Register</div>
+        </a>
+        </li>
+    {% endif %}
+</ul>

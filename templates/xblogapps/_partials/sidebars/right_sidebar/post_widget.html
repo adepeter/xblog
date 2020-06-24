@@ -1,0 +1,99 @@
+{% load static %}
+{% load article_tags %}
+{% load post_tags %}
+
+<div class="widget clearfix">
+
+    <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
+
+        <ul class="tab-nav clearfix">
+            <li><a href="#tabs-1">Popular </a></li>
+            <li><a href="#tabs-2">Recent</a></li>
+            <li><a href="#tabs-3"><i class="icon-comments-alt norightmargin"></i></a></li>
+        </ul>
+
+        <div class="tab-container">
+
+            <div class="tab-content clearfix" id="tabs-1">
+                <div id="popular-post-list-sidebar">
+                    {% trending_articles as popular_articles %}
+                    {% for popular_article in popular_articles %}
+                        <div class="spost clearfix">
+                            <div class="entry-image">
+                                <a href="#" class="nobg"><img class="rounded-circle"
+                                                              src="{% if popular_article.author.avatar %}{{ popular_article.author.avatar.url }}{% else %}{% static 'images/no_avatar.png' %}{% endif %}"
+                                                              alt=""></a>
+                            </div>
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h4><a href="#">{{ popular_article.title }}</a></h4>
+                                </div>
+                                <ul class="entry-meta">
+                                    {% with popular_article.posts.count as posts_count %}
+                                        <li><i class="icon-comments-alt"></i> {{ posts_count }}
+                                            Comment{{ posts_count|pluralize }}</li>
+                                    {% endwith %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No any popular article yet</p>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="tab-content clearfix" id="tabs-2">
+                <div id="recent-post-list-sidebar">
+                    {% newest_articles as latest_articles %}
+                    {% for latest_article in latest_articles %}
+                        <div class="spost clearfix">
+                            <div class="entry-image">
+                                <a href="#" class="nobg">
+                                    <img class="rounded-circle"
+                                         src="
+                                                 {% if newest_article.author.avatar %}{{ newest_article.author.avatar.url }}{% else %}{% static 'images/thumbnail_users.png' %}{% endif %}"
+                                         alt=""></a>
+                            </div>
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h4><a href="#">{{ latest_article.title }}</a></h4>
+                                </div>
+                                <ul class="entry-meta">
+                                    <li>{{ latest_article.created }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No latest article yet</p>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="tab-content clearfix" id="tabs-3">
+                <div id="recent-post-list-sidebar">
+                    {% list_posts as posts %}
+                    {% for post in posts %}
+                        <div class="spost clearfix">
+                            <div class="entry-image">
+                                <a href="#" class="nobg">
+                                    <img class="rounded-circle" src="{% if post.user.avatar %}{{ post.user.avatar.url }}{% else %}{% static 'images/thumbnail_users.png' %}{% endif %}"
+                                         alt="{{ post.user.username }}">
+                                </a>
+                            </div>
+                            <div class="entry-c">
+                                <strong>{{ post.user.get_display_name }}</strong>:</strong>
+                                {{ post.content | truncatechars:100 }}
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No posts yet</p>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
