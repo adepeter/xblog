@@ -4,7 +4,16 @@
 {% block title %}{{ category.name }}{% endblock %}
 
 {% block title_jumbotron %}
-
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1>{{ category.name }}</h1>
+            <span>{{ category.description }}</span>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'xblog:home' %}">Home</a></li>
+                <li class="breadcrumb-item">{{ category.name }}</li>
+            </ol>
+        </div>
+    </section>
 {% endblock %}
 
 {% block content %}

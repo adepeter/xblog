@@ -1,21 +1,32 @@
 {% if is_paginated %}
-
-    <div class="row mb-3">
-        <div class="col-lg-12">
-            {% if page.has_previous_page_number %}
-                <a href="?page={{ page.previous_page_number }}" class="btn btn-outline-secondary float-left">&larr;
-                    Older</a>
-                {% else %}
-                <a disabled="true" class="btn btn-outline-secondary float-left">&larr;
-                    First</a>
+<div class="row">
+    <div class="col-md-6">
+        <ul class="pagination pagination-rounded pagination-inside-transparent pagination-button pagination-md">
+            {% if page.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
+                </li>
+                {% comment %}
+           {% else %}
+                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span
+                        aria-hidden="true">&laquo;</span></a></li>
+                        {% endcomment %}
             {% endif %}
-            {% if page.next_page_number %}
-                <a href="{{ page.next_page_number }}" class="btn btn-outline-dark float-right">Newer &rarr;</a>
-                {% else %}
-                <a disabled="true" class="btn btn-outline-secondary float-left">&larr;
-                    Last</a>
-            {% endif %}
-        </div>
+        </ul>
     </div>
+
+    <div class="col-md-6">
+        <ul class="pagination pagination-rounded pagination-inside-transparent pagination-button pagination-md">
+            {% if page.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page.next_page_number }}">Next</a>
+                </li>
+                {% comment %}
+           {% else %}
+                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Next"><span
+                        aria-hidden="true">&raquo;</span></a></li>
+{% endcomment %}
+            {% endif %}
+        </ul>
+    </div>
+</div>
 
 {% endif %}

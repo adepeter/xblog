@@ -19,7 +19,6 @@ class ArticleAdmin(admin.ModelAdmin):
         'author',
         'slug',
         'category',
-        'content',
         'total_posts',
         'is_hidden',
         'created',

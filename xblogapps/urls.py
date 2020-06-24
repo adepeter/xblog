@@ -13,14 +13,10 @@ app_name = 'xblog'
 # ]
 
 class Homepage(ListView):
-    paginate_by = 2
+    paginate_by = 10
     model = Article
     template_name = 'xblogapps/index.html'
     context_object_name = 'articles'
-
-    def get_queryset(self):
-        qs = super(Homepage, self).get_queryset()
-        return qs.filter(is_hidden=False)
 
 
 urlpatterns = [
