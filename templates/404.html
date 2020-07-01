@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <!-- Stylesheets
+    ============================================= -->
+    {% include 'loader/header/metatags.html' %}
+    <!-- Stylesheets
+    ============================================= -->
+    {% include 'loader/header/stylesheets.html' %}
+    <!-- Document Title
+    ============================================= -->
+    <title>Page not found</title>
+
+</head>
+
+<body class="stretched">
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <!-- Header
+    ============================================= -->
+    <header id="header" class="transparent-header page-section dark">
+        {% include 'loader/header/top.html' %}
+    </header><!-- #header end -->
+
+    <section id="slider" class="slider-element slider-parallax full-screen dark error404-wrap">
+
+        <div class="slider-parallax-inner">
+
+            <div class="container-fluid vertical-middle center clearfix">
+
+                <div class="error404">404</div>
+
+                <div class="heading-block nobottomborder">
+                    <h4>Ooopps.! {{ error_message }}</h4>
+                    <span>Try the search below to find matching pages:</span>
+                </div>
+
+                <form action="#" method="get" class="divcenter nobottommargin">
+                    <div class="input-group input-group-lg">
+                        <input type="text" class="form-control" placeholder="Search for Pages...">
+                        <div class="input-group-append">
+                            <button class="btn btn-danger" type="button">Search</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="video-wrap">
+                <video poster="{% static 'images/videos/explore.jpg' %}" preload="auto" loop autoplay muted>
+                    <source src="{% static 'images/videos/explore.mp4' %}" type='video/mp4'/>
+                    <source src="{% static 'images/videos/explore.jpg' %}" type='video/webm'/>
+                </video>
+                <div class="video-overlay" style="background-color: rgba(0,0,0,0.3);"></div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Footer
+        ============================================= -->
+    <footer id="footer" class="dark">
+        {% include 'loader/footer/base.html' %}
+    </footer><!-- #footer end -->
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts
+============================================= -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script src="{% static 'js/functions.js' %}"></script>
+
+</body>
+</html>

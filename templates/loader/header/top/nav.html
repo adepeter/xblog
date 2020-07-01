@@ -1,11 +1,13 @@
 <ul>
-    <li><a href="{% url 'xblog:home' %}">
-        <div>Home</div>
-    </a>
+    <li>
+        <a href="{% url 'xblog:home' %}">
+            <div>Home</div>
+        </a>
     </li>
-    <li><a href="#">
+    <li class="current mega-menu"><a href="#">
         <div>Categories</div>
     </a>
+        {% include 'loader/header/top/categories_dropdown.html' %}
     </li>
     {% if not request.user.is_authenticated %}
         <li><a href="{% url 'xblog:users:login' %}">

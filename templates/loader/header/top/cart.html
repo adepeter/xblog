@@ -12,20 +12,9 @@
                                  alt="Blue Round-Neck Tshirt"/></a>
             </div>
             <div class="top-cart-item-desc">
-                <a href="#">Blue Round-Neck Tshirt</a>
-                <span class="top-cart-item-price">$19.99</span>
-                <span class="top-cart-item-quantity">x 2</span>
-            </div>
-        </div>
-        <div class="top-cart-item clearfix">
-            <div class="top-cart-item-image">
-                <a href="#"><img src="{% static 'images/shop/small/6.jpg' %}"
-                                 alt="Light Blue Denim Dress"/></a>
-            </div>
-            <div class="top-cart-item-desc">
-                <a href="#">Light Blue Denim Dress</a>
-                <span class="top-cart-item-price">$24.99</span>
-                <span class="top-cart-item-quantity">x 3</span>
+                <a href="{% url 'xblog:users:edit_profile' request.user.id request.user.slug %}">Edit profile</a>
+                <a href="#">My posts</a>
+                <a href="{% url 'xblog:users:view_profile' request.user.id request.user.slug %}">My profile</a>
             </div>
         </div>
     </div>

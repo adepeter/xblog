@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 from django.views.generic.detail import SingleObjectMixin
@@ -20,7 +21,7 @@ class ArticleList(SingleObjectMixin, ListView):
     paginate_by = 20
 
     def get(self, request, *args, **kwargs):
-        self.object = self.get_object(Category.objects.all())
+        self.object = self.get_object()
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -29,12 +30,25 @@ class ArticleList(SingleObjectMixin, ListView):
         context['articles'] = self.get_queryset()
         return context
 
+    def get_object(self):
+        return super().get_object(Category.objects.all())
+
     def get_queryset(self):
         qs = self.object.articles
         return qs.all()
 
     def get_slug_field(self):
         return str('slug__iexact')
+
+    def dispatch(self, request, *args, **kwargs):
+        category = self.get_object()
+        if category.is_lock:
+            return render(
+                self.request,
+                template_name='404.html',
+                context={'error_message': _('Category does not exist or is a root category')}
+            )
+        return super().dispatch(request, *args, **kwargs)
 
 
 class ArticleRead(MultipleObjectMixin, CreateView):

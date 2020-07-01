@@ -37,8 +37,6 @@ w
 Gtemplates/xblogapps/_partials/sidebars/left_sidebar/twitter_follow.html,e\2\e2ea41fc710dd29f3b53b066e6e56c58f76dac0a
 o
 ?templates/xblogapps/_partials/sidebars/left_sidebar/flickr.html,a\e\ae6e91ab8d4885c3d85d1d6c305e5994ae9c0858
-t
-Dtemplates/xblogapps/_partials/sidebars/left_sidebar/post_widget.html,d\8\d8850974cb42c03aa3920afc328fb7edcd902f09
 p
 @templates/xblogapps/_partials/pagination/two_way_pagination.html,8\d\8de494cdee368af52449067a082a57415084c0ce
 t
@@ -53,8 +51,6 @@ Gtemplates/xblogapps/_partials/sidebars/right_sidebar/popular_items.html,b\5\b5
 Ktemplates/xblogapps/_partials/sidebars/left_sidebar/portfolio_carousel.html,3\e\3e32a4a185e23e3a5cfc2ee54897cacb92532651
 X
 (templates/loader/header/stylesheets.html,e\7\e7adbe3b42146280968421cd13e7edf535c85cd8
-s
-Ctemplates/xblogapps/_partials/sidebars/right_sidebar/subscribe.html,0\c\0c6f0642f299d5c7aa5263563a3ab4e98a2e9ffb
 z
 Jtemplates/xblogapps/_partials/sidebars/right_sidebar/clients_carousel.html,f\c\fc043b9dbc4ae7b934cbd4c812bdfd5968f9e25c
 u
@@ -139,8 +135,6 @@ M
 xblogapps/categories/admin.py,4\8\4852bffb777d460c378e38c2280b4e1be08cc200
 b
 2xblogapps/categories/templatetags/category_tags.py,8\5\8555ba237d16d094673e86a310c1669e69b8dee4
-m
-=templates/xblogapps/_partials/sidebars/left_sidebar/tags.html,3\8\38a6c0016ae431be93672ae65736eb6a1ec03a4d
 Y
 )xblogapps/blogs/templatetags/post_tags.py,4\f\4f274e2949ce25fd224e4602b7f6b495fbff602f
 \

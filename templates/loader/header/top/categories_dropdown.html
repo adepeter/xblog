@@ -1,0 +1,23 @@
+{% load category_tags %}
+
+<div class="mega-menu-content style-2 clearfix">
+    {% categories as base_categories %}
+    {% for category in base_categories %}
+        <ul class="mega-menu-column col-md-3">
+            <li class="mega-menu-title"><a href="#">
+                <div>{{ category.name }}</div>
+            </a>
+
+                <ul>
+                    {% for children in category.children.all %}
+                        {% if not children in base_categories %}
+                            <li><a href="{% url 'xblog:blogs:article_list' children.slug %}">
+                                <div>{{ children.name }}</div>
+                            </a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    {% endfor %}
+</div>
