@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Replying post{% endblock %}
+
+{% block title_jumbotron %}
+    <section id="page-title">
+
+			<div class="container clearfix">
+				<h1>Replying {{ parent.user.get_display_name }}</h1>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="{% url 'xblog:home' %}">Home</a></li>
+					<li class="breadcrumb-item"><a href="{% url 'xblog:blogs:article_list' parent.article.category.slug %}">{{ parent.article.category.name }}</a></li>
+					<li class="breadcrumb-item active" aria-current="page">{{ parent.article.title }}</li>
+				</ol>
+			</div>
+
+		</section>
+{% endblock %}
+
+{% block content %}
+    <div class="container clearfix">
+
+        <div id="respond" class="clearfix">
+
+            <h3>Leave a <span>Comment</span></h3>
+
+            <form class="clearfix" action="" method="POST">
+                {% csrf_token %}
+                <div class="clear"></div>
+
+                <div class="col_full">
+                    <label for="comment">Comment</label>
+                    {{ form.content }}
+                </div>
+
+                <div class="col_full nobottommargin">
+                    <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit"
+                            class="button button-3d nomargin">Submit Comment
+                    </button>
+                </div>
+
+            </form>
+
+        </div><!-- #respond end -->
+
+    </div><!-- #comments end -->
+
+    </div>
+{% endblock %}

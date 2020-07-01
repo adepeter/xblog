@@ -16,7 +16,7 @@ class BasePostForm:
             'cols': '58',
             'rows': '7',
             'class': 'sm-form-control',
-            'placeholder': _('Enter yor reply'),
+            'placeholder': _('Enter your reply'),
         })
 
 
@@ -29,6 +29,25 @@ class PostForm(BasePostForm, forms.ModelForm):
         post = super().save(commit=False)
         post.user = self.request.user
         post.article = self.article
+        if commit:
+            post.save()
+        return post
+
+
+class ReplyPostForm(PostForm):
+
+    def __init__(self, *args, **kwargs):
+        self.parent = kwargs.pop('parent')
+        super().__init__(*args, **kwargs)
+        if self.parent.is_child():
+            self.fields['content'].disabled = True
+
+    def save(self, commit=True):
+        post = super().save(commit=False)
+        print(self.request.user)
+        post.user = self.request.user
+        post.article = self.article
+        post.parent = self.parent
         if commit:
             post.save()
         return post

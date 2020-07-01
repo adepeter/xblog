@@ -29,3 +29,9 @@ class Post(models.Model):
         null=True,
         blank=True
     )
+
+    def __str__(self):
+        return self.content[:10]
+
+    def is_child(self):
+        return bool(self.parent)

@@ -288,7 +288,7 @@
 
                             <p>{{ post.content | linebreaksbr }}</p>
 
-                            <a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
+                            <a class='comment-reply-link' href='{% url 'xblog:blogs:reply_post' post.article.category.slug post.article.slug post.id %}'><i class="icon-reply"></i></a>
 
                         </div>
 
@@ -327,8 +327,6 @@
                                             </div>
 
                                             <p>{{ children.content }}</p>
-
-                                            <a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
 
                                         </div>
 
